@@ -8,6 +8,7 @@ class Field:
         self.portions = maxSizeX/12
 
         self.lineCoordinates = []
+        self.scrimmageLine = 50
         for x in range(self.maxSizeX):    
             if x%9 == 0:
                 self.lineCoordinates.append(int(x+1+self.portions))
@@ -27,5 +28,11 @@ class Field:
                     self.canvas.putPoint(x, y, "\033[0;0;42m ")
                 if x in self.lineCoordinates: 
                     self.canvas.putPoint(x, y, "\033[0;0;47m ") 
+    def putPoint(self, x, y, character):
+        self.canvas.putPoint(x, y, character)
+    def clearPoint(self, x, y)
+        self.canvas.clearPoint(x, y)
+    def update(self, tileArray):
+        self.canvas.update(tileArray)
     def drawField(self):
         self.canvas.drawCanvas()
