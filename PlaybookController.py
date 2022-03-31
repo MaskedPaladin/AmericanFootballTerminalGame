@@ -5,8 +5,8 @@ import os
 def loadPlaybook(dataFolder):
     plays = []
     playbooks = []
+    formations = []
     actions = []
-
     playbooksFiles = os.listdir(dataFolder+"/Teams/Playbook")
 
     opened = False
@@ -31,10 +31,14 @@ def loadPlaybook(dataFolder):
                     playTag = l
                     name = fields[1]
                 if l[0] == "*" and opened == True:
+                    formation = (l[2:].split(","))
+                    formations.append(formation)
+                if l[0] == "+" and opened == True:
                     action = (l[2:].split(","))
                     actions.append(action)
                 if l == playTag:
-                    plays.append(Play(name, actions))
+                    plays.append(Play(name, formations, actions))
+                    formations = []
                     actions = []
         playbooks.append(Playbook(p, stereotype, plays))
 
