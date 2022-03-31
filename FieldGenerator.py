@@ -1,4 +1,17 @@
 from Canvas import *
+def loadDataFromCSV(dataFolder, name):
+    with open(dataFolder+"/Field"+"fields.csv") as f:
+        lines = f.readlines()
+        for l in lines:
+            if l[0] != "#":
+                l = l.strip("\n")
+                fields = l.split(",")
+                if name == fields[0]:
+                    return (fields[1], fields[2], fields[3], fields[4])    
+                else:
+                    continue
+            else:
+                continue
 
 def generateCanvas(xSize, ySize, grassCharacter, lineCharacter, teamACharacter, teamBCharacter):
     canvas = Canvas(xSize,ySize)
