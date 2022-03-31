@@ -1,0 +1,56 @@
+######################################################################################
+#-------------------------------------------------------------------------------------
+# This is a comment.
+# Syntax: <dataType> <name/role> [positionX, positionY]
+#-------------------------------------------------------------------------------------
+# Data types:
+# - <Offense, Defense, SpecialTeam>                 		 (Defines play stereotype)
+# @ <name>			     	             		 (Defines play entry)
+# * <role>, <positionX>, <positionY>	     	     		 (Defines initial formation)
+# + <role>, (<wayPointX>, <wayPointY>, <Block, Tackle, Intercept, None>), ...  (Defines a route)
+#-------------------------------------------------------------------------------------
+# Formation coords:
+# 0 is the most close x coordinate to the scrimmage line.
+# 0 is the most close x coordinate to the sideline.
+# Higher values are rear coordiantes.
+# ------------------------------------------------------------------------------------
+# Route coords:
+# Any 0 signifies no movement on that axis
+# n positive values signifies advance on the axis n times
+# n negative values signifies recede on the axis n times
+# Action is the action to do after the advance is accomplished
+# ------------------------------------------------------------------------------------
+######################################################################################
+#-------------------------------------------------------------------------------------
+# DEFENSE PLAYBOOK
+#-------------------------------------------------------------------------------------
+- Defense
+#-------------------------------------------------------------------------------------
+# 3-4
+#-------------------------------------------------------------------------------------
+@ 3-4-ILB-Blitz
+# Formation:
+* CB1,2,2
+* DE1,0,7
+* NT,0,9
+* DE1,0,11
+* CB2,2,20
+* OL1,2,8
+* ILB1,2,10
+* ILB2,2,12
+* OLB2,2,14
+* ST1,20,14
+* ST2,20,8
+# Routes:
++ CB1,(-5,0,Intercept)
++ DE1,(1,0,Tackle)
++ NT,(1,0,Tackle)
++ DE2,(1,0,Tackle)
++ CB2,(-5.0,Intercept)
++ OL1,(1,-1,Block)
++ ILB1,(-2,1,Block)
++ ILB2,(-2,-1,Block)
++ OLB2,(1,1,Block)
++ ST1,(0,0,Intercept)
++ ST2,(0,0,Intercept)
+@ 3-4-ILB-Blitz
