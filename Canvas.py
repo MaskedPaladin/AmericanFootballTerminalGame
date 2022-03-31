@@ -21,3 +21,4 @@ class Canvas:
 		for i, tile in enumerate(tileArray):
 			self.putPoint(tile[0], tile[1], tile[2])
 
+
