@@ -3,6 +3,7 @@
 This project pretends be an American Football manager
 
 # TODO
+- Load teams and players system
 - System to generate a field with x and y size given by parameter and letters that indicates the yardage number
 - Draw players on screen
 - System to set player positions from values on the playbook play.
