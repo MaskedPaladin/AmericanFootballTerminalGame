@@ -33,7 +33,6 @@ def generateCanvas(xSize, ySize, grassCharacter, lineCharacter, teamACharacter, 
                 canvas.putPoint(x, y, lineCharacter)
             if x in range(int((xSize/10)-1), int((xSize-xSize/10)-1), int((xSize/24))):
                 canvas.putPoint(x, y, lineCharacter)
-            
     return canvas
 
 
@@ -45,7 +44,7 @@ def getStadiums(dataFolder):
             if l[0] != "#":
                 l = l.strip("\n")
                 fields = l.split(",")
-                stadiums.append(Stadium(fields[1],fields[2],fields[3],fields[4]))
+                stadiums.append(Stadium(fields[1],fields[2],"\033[0;0;"+fields[3]+"m ","\033[0;0;"+fields[4]+"m "))
             else:
                 continue
     return stadiums
