@@ -1,18 +1,16 @@
-from Menu import *
-
-from PlayerController import *
 from TeamController import *
-from FieldController import *
-
-
+from StadiumController import *
 
 def Initialize(dataFolder):
-    players = PlayerController.getPlayers(dataFolder)
-    teams = TeamController.getTeams(dataFolder)
-    fields = FieldController.getFields(dataFolder)
-    return [players, teams, fields]
+    teams = getTeams(dataFolder)
+    stadiums = getStadiums(dataFolder)
+    return [teams, stadiums]
 
 def main():
     initData = Initialize("Data")
-    while True:
-        mainMenu()
+    stadiumDrawables = []
+    for stadium in initData[1]:
+        stadiumDrawables.append(generateCanvas(int(initData[1][0].x), int(initData[1][0].y), "\033[0;0;42m ", "\033[0;0;47m ", "\033[0;0;41m ", "\033[0;0;44m "))
+    stadiumDrawables[0].drawCanvas()
+
+main()

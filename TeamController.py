@@ -1,0 +1,2 @@
+def getTeams(dataFolder):
+    pass

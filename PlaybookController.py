@@ -48,9 +48,3 @@ def loadPlaybook(dataFolder):
         stereotype = None
         name = None
     return playbooks
-for p in loadPlaybook("Data"):
-    print("--------------------------------------------------")
-    print(p.__dict__)
-    print("--------------------------------------------------")
-    for pl in p.plays:
-        print(pl.__dict__)
