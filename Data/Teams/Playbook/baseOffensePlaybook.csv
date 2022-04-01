@@ -1,0 +1,56 @@
+######################################################################################
+#-------------------------------------------------------------------------------------
+# This is a comment.
+# Syntax: <dataType> <name/role> [positionX, positionY]
+#-------------------------------------------------------------------------------------
+# Data types:
+# - <Offense, Defense, SpecialTeam>                 		 (Defines play stereotype)
+# @ <name>			     	             		 (Defines play entry)
+# * <role>, <positionX>, <positionY>	     	     		 (Defines initial formation)
+# + <role>, (<wayPointX>, <wayPointY>, <Pass, Toss, Receive, Block, Tackle, None>), ...  (Defines a route)
+#-------------------------------------------------------------------------------------
+# Formation coords:
+# 0 is the most close x coordinate to the scrimmage line.
+# 0 is the most close x coordinate to the sideline.
+# Higher values are rear coordiantes.
+# ------------------------------------------------------------------------------------
+# Route coords:
+# Any 0 signifies no movement on that axis
+# n positive values signifies advance on the axis n times
+# n negative values signifies recede on the axis n times
+# Action is the action to do after the advance is accomplished
+# ------------------------------------------------------------------------------------
+######################################################################################
+#-------------------------------------------------------------------------------------
+# OFFENSE PLAYBOOK
+#-------------------------------------------------------------------------------------
+- Offense
+#-------------------------------------------------------------------------------------
+# Right side trips
+#-------------------------------------------------------------------------------------
+@ r_side_trips
+# Formation:
+* WR1,2,1
+* WR2,2,4
+* WR3,2,6
+* TE1,1,12
+* OT1,1,13
+* OG1,1,14
+* C,0,15
+* OG2,1,16
+* OT2,1,17
+* WR4,2,20
+* QB,5,15
+# Routes:
++ WR1,(12,0,Receive)
++ WR2,(5,2,Receive)
++ WR3,(7,4,Receive)
++ TE1,(1,0,Block)
++ OT1,(-1,0,Block)
++ OG1,(-1,0,Block)
++ C,(-1,0,Block)
++ OG2,(-1,0,Block)
++ OT2,(-1,0,Block)
++ WR4,(20,0,Receive)
++ QB,(-3,0, Pass)
+@ r_side_trips
